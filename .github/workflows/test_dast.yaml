@@ -17,6 +17,7 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.13.0
         with:
-          target: 'hello.json'
+          target: 'https://www.example.com'
+          -J: ./hello.json
       - name: cat
-        run: cat hello.json
+        run: cat ./hello.json
