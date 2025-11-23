@@ -18,6 +18,7 @@ jobs:
         uses: zaproxy/action-full-scan@v0.13.0
         with:
           target: 'https://www.example.com'
-          -J: ./hello.json
+          cmd_options: 
+            -J: ./hello.json
       - name: cat
         run: cat ./hello.json
