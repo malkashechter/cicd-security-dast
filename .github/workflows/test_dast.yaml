@@ -14,11 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run OWASP ZAP scan
-        uses: zaproxy/action-baseline@v0.6.1 # Or zaproxy/action-full-scan@v0.6.1
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.13.0
         with:
-          docker_name: 'zaproxy/zap-stable'
-          target: 'http://localhost:8080'
-          # rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
-          fail_action: true
+          target: 'https://www.zaproxy.org/'
