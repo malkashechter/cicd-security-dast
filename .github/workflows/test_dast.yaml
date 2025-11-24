@@ -17,8 +17,9 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-full-scan@v0.13.0
         with:
-          target: 'http://host.docker.internal:8080'
-          cmd_options: '-a'
+          target: 'http://host.docker.internal:8080/xss?q=<script>alert(1)</script>
+'
+          cmd_options: '-a --fail-on-risk High'
           fail_action: true
       - name: cat
         run: cat report_json.json
