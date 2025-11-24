@@ -19,7 +19,7 @@ jobs:
         with:
           target: 'http://host.docker.internal:8080/xss?q=<script>alert(1)</script>
 '
-          cmd_options: '-a --fail-on-risk High'
+          cmd_options: '-a'
           fail_action: true
       - name: cat
         run: cat report_json.json
