@@ -18,7 +18,7 @@ jobs:
         uses: zaproxy/action-full-scan@v0.13.0
         with:
           target: 'http://host.docker.internal:8080/xss?q=<script>alert(1)</script>'
-          cmd_options: '-a'
+          cmd_options: '-a -c'
           fail_action: true
           allow_issue_writing: false
       - name: cat
